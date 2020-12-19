@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+
+{%block main%}
+<h1>My Contacts</h1>
+<ul>
+{%for id,contact in contacts.items()%}
+<li>
+    <a href="{{url_for('view_contact',id=id)}}"> {{contact.first_name}} {{contact.last_name}}</a>
+</li>
+{%endfor%}
+</ul>
+{%endblock%}
