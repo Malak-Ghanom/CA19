@@ -9,10 +9,6 @@ app = Flask(__name__)
 #load dummy data
 contact_book = generate_contacts()
 
-@app.route('/')
-def users ():
-    return render_template()
-
 @app.route('/contacts')
 def list_contacts():
     return render_template('list-contacts.html', contacts = contact_book.get_contacts(),url=url_for('add_contact'))
@@ -74,3 +70,18 @@ def about():
 #     contact = contact_book.get_contact(id)
 #     contact_book.remove_contact(contact)
 #     return redirect(url_for('list_contacts'))
+
+
+@app.route('/',methods = ['GET','POST'])
+def user():
+    if request.method == 'GET':
+        return render_template('user.html')
+    else:
+        #read values from form
+        login = request.form['login']
+        password = request.form['password']
+
+        if login == 'malak' and password == 'mm1234':
+        
+            #redirect to contact list
+            return redirect(url_for('list_contacts'))
