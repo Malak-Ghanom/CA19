@@ -7,11 +7,10 @@ class ContactBook:
         self.contacts[contact.id]= contact
 
     def get_contact(self,id):
-        print(self.contacts)
         return self.contacts.get(id)
 
-    def remove_contact(self):
-        pass
+    def remove_contact(self,contact):
+        self.contacts.pop(contact,None)
 
     def get_contacts(self):
         return self.contacts

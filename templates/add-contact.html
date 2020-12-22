@@ -3,8 +3,31 @@
 {%block main%}
 <h1>Add Contact</h1>
 <form method="POST">
-    <input type="text" name="first_name" placeholder="first name">
-    <input type="text" name="last_name" placeholder="last name">
+    <input required="" type="text" name="first_name" placeholder="First Name">
+    <input type="text" name="last_name" placeholder="Last Name">
+    <br><br>
+    <input required="" type="text" name="nick_name" placeholder="Nick Name">
+    <br><br>
+    <input required="" type="text" id="phone" name="phone_number" maxlength="10" placeholder="Phone Number" >
+    <br><br>
+    <input required="" type="email" name="email" placeholder="example@email.com">
+    <br>
+    
+    <input type="checkbox" id="favorite" name="favorite" value="True">
+    <label for="favorite"> Favorite </label>
+    <br>
+    <input type="checkbox" id="family" name="family" value="True">
+    <label for="family"> Family </label>
+    <br>
+    <input type="checkbox" id="friend" name="friend" value="True">
+    <label for="friend"> Friend </label>
+    <br>
+    <input type="checkbox" id="work" name="work" value="True">
+    <label for="work"> Work </label>
+    
+    <br><br>
+
     <button type="submit">Add Contact</button>
+    <!-- <a href="tel:123-456-7890">CLICK TO CALL</a> -->
 </form>
 {%endblock%}

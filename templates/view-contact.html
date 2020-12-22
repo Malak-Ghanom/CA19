@@ -1,5 +1,51 @@
 {%extends 'base.html'%}
 
 {%block main%}
-<h1>{{contact.first_name}} {{contact.last_name}}</h1>
+<div>
+<h1 style="text-align: left;"><i class="glyphicon glyphicon-user"></i>
+    {{contact.first_name}} {{contact.last_name}}</h1>
+</div>
+
+<div>
+<table class="table table-hover" style="margin: 50px;">
+    <tbody>
+    <tr>
+        <th scope="row">First Name</th>
+        <td>{{contact.first_name}}</td>
+    </tr>
+    <tr>
+        <th scope="row">Last Name</th>
+        <td>{{contact.last_name}}</td>
+    </tr>
+    <tr>
+        <th scope="row">Nick Name</th>
+        <td colspan="2">{{contact.nickname}}</td>
+    </tr>
+    <tr>
+        <th scope="row">Phone Number</th>
+        <td colspan="2">{{contact.phone_number}}</td>
+    </tr>
+    <tr>
+        <th scope="row">E-mail Address</th>
+        <td colspan="2">{{contact.email}}</td>
+    </tr>
+    <tr>
+        <th scope="row">Favorite</th>
+        <td colspan="2">{{contact.favorite}}</td>
+    </tr>
+    <tr>
+        <th scope="row">Work</th>
+        <td colspan="2">{{contact.work}}</td>
+    </tr>
+    <tr>
+        <th scope="row">Family</th>
+        <td colspan="2">{{contact.family}}</td>
+    </tr>
+    <tr>
+        <th scope="row">Friend</th>
+        <td colspan="2">{{contact.friend}}</td>
+    </tr>
+    </tbody>
+</table>
+
 {%endblock%}

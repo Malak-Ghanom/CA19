@@ -3,13 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Simple Contacts Book</title>
-</head>
-<body>
-    <main>
-        {%block main%}
+    
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link type="text/css" href="{​​​​{​​​​url_for('static',filename='css/style.css')}​​​​}​​​​" rel="stylesheet">
 
-        {%endblock%}
-    </main>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #E0DFDF;
+    color:#333333;
+    text-align: center;
+    }
+
+    body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmvVIN40Uam0nDtQPkgbUToP96Us8WTKVyyg&usqp=CAU');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size:contain;
+    background-position: center;
+    }
+
+    .ul {
+    list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333333;
+    }
+
+    .li {
+    float: left;
+    }
+
+    .li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    }
+
+    .li a:hover {background-color: #111111;}
+    </style>
+
+</head>
+
+
+
+<body >
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+      </svg> -->
+<nav>
+    <ul class="ul">
+        
+        <!-- <li class="li"><a style="text-decoration:none" href="#news">Users</a></li> -->
+        <i class="glyphicon glyphicon-user" style="font-size:24px;color:white;padding: 10px;"></i>
+        <li class="li"><a style="text-decoration:none" href="/contacts" class="bi bi-person-lines-fill" style="color: white;">Contacts</a></li>
+        <li class="li"><a style="text-decoration:none" href="/contact/add">Add Contact</a></li>
+        <li class="li"><a style="text-decoration:none" href="/contactbook">Contacts Book</a></li>
+        <li class="li"><a style="text-decoration:none" href="/about">about</a></li>
+
+    </ul>
+</nav>
+<p style="text-align: right;">Date/Time: <span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2)) +"/"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()+1).slice(-2)) +":"+ (("0"+dt.getMinutes()+1).slice(-2));
+</script>
+
+<main style="margin: 20px;">
+    {%block main%}
+
+    {%endblock%}
+</main>
+
+<div class="footer">
+    <p>Simple Contacts Book</p>
+    <p>malakghanom96@gmail.com</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
